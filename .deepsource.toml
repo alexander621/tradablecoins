@@ -1,0 +1,25 @@
+version = 1
+
+exclude_patterns = [
+    "**/sandbox/**/*",
+    "**/db/migrate/*",
+    "**/Gemfile",
+    "**/Gemfile.lock",
+    "**/Rakefile",
+    "**/rails",
+    "**/*.gemspec",
+    "**/vendor/**/*"
+]
+
+[[analyzers]]
+name = "test-coverage"
+enabled = true
+
+[[analyzers]]
+name = "ruby"
+enabled = true
+
+[[transformers]]
+name = "standardrb"
+enabled = true
+

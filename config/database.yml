@@ -1,0 +1,24 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+
+development:
+  <<: *default
+  database: tradable_coins_development
+  username: tradable_coins
+  password:
+  host: localhost
+  port: 5432
+
+test:
+  <<: *default
+  database: tradable_coins_test
+  username: tradable_coins
+  password: tradable_coins
+  host: localhost
+  port: 5432
+
+production:
+  <<: *default
+  url: <%= ENV['DATABASE_URL'] %>
